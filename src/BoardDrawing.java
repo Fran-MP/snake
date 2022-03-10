@@ -10,6 +10,10 @@ import javax.swing.JPanel;
 //note: board does not change dynamically 
 //note: board shape and window aesthetics to be set
 //note: unification of colors not done
+/**
+ * @version 1.0
+ * @author Fran_
+ */
 public class BoardDrawing extends JPanel {
 
     /**
@@ -23,9 +27,15 @@ public class BoardDrawing extends JPanel {
     int[] cellnos;
 
     BoardScreen bs;
+
     //ArrayList<Portal> portals;
     //ArrayList<Player> players;
-
+    /**
+     *
+     * @param row fila
+     * @param col columna
+     * @param bs BoardScreen
+     */
     public BoardDrawing(int row, int col, BoardScreen bs) {
         this.bs = bs;
 
@@ -65,6 +75,11 @@ public class BoardDrawing extends JPanel {
 
     }
 
+    /**
+     *
+     * @param g Graphics
+     *  
+     */
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;//.create();
@@ -155,6 +170,7 @@ public class BoardDrawing extends JPanel {
 
     }
 
+    
     private void drawPlayerPosition(int i, Graphics2D g2d, Rectangle cell, int cellWidth, int cellHeight) {
         //draw player position
         for (int pl = 0; pl < bs.maxPlayers; pl++) {
@@ -162,11 +178,11 @@ public class BoardDrawing extends JPanel {
                 changePlayerColor(g2d, pl, cell, cellWidth, cellHeight);
             }
         }
-        
+
         if (cellnos[i] == row * col - 1) {
             for (int pl = 0; pl < bs.maxPlayers; pl++) {
                 if (bs.players.get(pl).getPosition() >= cellnos[i]) {                         //only one player considered here
-                    
+
                     changePlayerColor(g2d, pl, cell, cellWidth, cellHeight);
                     //change to player position
                     //change to player color
@@ -175,9 +191,10 @@ public class BoardDrawing extends JPanel {
         }
     }
 
+   
     private void changePlayerColor(Graphics2D g2d, int pl, Rectangle cell, int cellWidth, int cellHeight) {
         //only one player considered here
-        
+
         g2d.setColor(bs.players.get(pl).getPlayerColor());        //change to player color
         g2d.fillRect(cell.getLocation().x + pl * cellWidth / 4, cell.getLocation().y, cellWidth / 4, cellHeight / 4);//change to player position
         g2d.setColor(Color.blue);
@@ -190,6 +207,11 @@ public class BoardDrawing extends JPanel {
 				player = port.returnEnd();
 		}
 	}
+     */
+    /**
+     *
+     * @param pnos
+     * @return Mensaje
      */
     public String ensurePlayerPosition(int pnos) {
         String message = "";
@@ -210,6 +232,11 @@ public class BoardDrawing extends JPanel {
 	public void setPlayer(int a){
 		player = a;
 	}
+     */
+    /**
+     *
+     * @param a
+     * @param pnos
      */
     public void setPlayer(int a, int pnos) {
         bs.players.get(pnos).incPosition(a);

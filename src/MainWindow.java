@@ -9,6 +9,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * @version 1.0
+ * @author Fran_
+ */
 public class MainWindow extends JFrame {
 
     JPanel cards;
@@ -20,10 +24,16 @@ public class MainWindow extends JFrame {
     CustomizeBoardScreen s3;
     BoardScreen s4;
 
+    /**
+     *
+     * @param cardName
+     */
     public void showCard(String cardName) {
         cl.show(cards, cardName);
     }
-
+    /**
+     * 
+     */
     public void resetAll() {
         s1 = new WelcomeScreen(this);
         s2 = new PlayerSelectScreen(this);
@@ -41,7 +51,9 @@ public class MainWindow extends JFrame {
         s4 = new BoardScreen(this);
         cards.add(s4, "Four");
     }
-
+    /**
+     * 
+     */
     public MainWindow() {
 
         setVisible(true);

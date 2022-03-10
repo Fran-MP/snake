@@ -1,6 +1,9 @@
 
 import javax.swing.SwingUtilities;
-
+/**
+ * @version 1.0
+ * @author Fran_
+ */
 public class Main {
 
     /**
